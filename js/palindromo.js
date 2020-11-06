@@ -3,6 +3,8 @@ let palabra;
 let palabraDividida;
 let resultOk;
 let resultFail; 
+let palabraLow
+let palabraNoEspaces
 
 result = document.querySelector("#result")
 
@@ -13,10 +15,11 @@ function identificaPalindromo(evento) {
 
     palabra = document.querySelector("#text-to-analize").value;
 
-    palabra = palabra.toLowerCase();
+    palabraNoEspaces = palabra.replace(/ /g, "")
 
-    console.log(palabra)
-    palabraDividida = palabra.split([]);
+    palabraLow = palabraNoEspaces.toLowerCase();
+
+    palabraDividida = palabraLow.split([]);
 
     let i = 0;
     let j = palabraDividida.length - 1;
@@ -24,14 +27,14 @@ function identificaPalindromo(evento) {
     while (i < palabraDividida.length - 1 && j > i) {
         if (palabraDividida[i] != palabraDividida[j]) {
             resultOk = document.querySelector("#result")
-            resultOk.innerText = "No, " + palabra + " no es una palabra palíndroma"
+            resultOk.innerText = "No, " + palabra + " it's not a palindrome. Try another one"
             return
         }
         i++
         j--
     }
     resultFail = document.querySelector("#result")
-    resultFail.innerText = "Correcto, la palabra " + palabra + " es un palíndromo"
+    resultFail.innerText = "Sure!, " + palabra + " it's a palindrome"
 }
 
 let formulario = document.querySelector("#check")
