@@ -1,0 +1,23 @@
+:root {
+  --bg: rgb(245, 243, 253);
+  --font: "Montserrat", sans-serif;
+  --font-display: "Montserrat", sans-serif;
+  --mediumpurple: #654ff9;
+  --softpurple: #998bfa;
+  --darkpurple: #4032e6;
+  --softblue: #3169d1;
+  --darkblue: #2653a5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--mediumpurple);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
